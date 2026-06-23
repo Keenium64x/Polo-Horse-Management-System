@@ -1,0 +1,125 @@
+{
+ "app": "horsemanagement",
+ "charts": [],
+ "content": "[{\"id\":\"horse-management-heading\",\"type\":\"header\",\"data\":{\"text\":\"Horse Management\",\"col\":12}},{\"id\":\"horse-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Horses\",\"col\":4}},{\"id\":\"feeding-session-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Feeding Sessions\",\"col\":4}},{\"id\":\"food-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Foods\",\"col\":4}},{\"id\":\"masters-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"operations-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":6}},{\"id\":\"masters-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":6}}]",
+ "creation": "2026-06-23 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "heart-pulse",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Horse Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Operations",
+   "link_count": 1,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Feeding Sessions",
+   "link_count": 0,
+   "link_to": "Feeding Session",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 2,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Horses",
+   "link_count": 0,
+   "link_to": "Horse",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Foods",
+   "link_count": 0,
+   "link_to": "Food",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-23 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Horse Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [
+  {
+   "role": "Groom"
+  },
+  {
+   "role": "Horse Manager"
+  },
+  {
+   "role": "Horse Owner"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Veterinarian"
+  },
+  {
+   "role": "Yard Manager"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Horses",
+   "link_to": "Horse",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "label": "Feeding Sessions",
+   "link_to": "Feeding Session",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Foods",
+   "link_to": "Food",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Horse Management",
+ "type": "Workspace"
+}

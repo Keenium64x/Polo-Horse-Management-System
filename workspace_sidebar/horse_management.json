@@ -1,0 +1,49 @@
+{
+ "app": "horsemanagement",
+ "creation": "2026-06-23 11:20:11.364729",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "heart-pulse",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Horses",
+   "link_to": "Horse",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Feeding Sessions",
+   "link_to": "Feeding Session",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Foods",
+   "link_to": "Food",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-23 11:20:11.364729",
+ "modified_by": "Administrator",
+ "name": "Horse Management",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Horse Management"
+}

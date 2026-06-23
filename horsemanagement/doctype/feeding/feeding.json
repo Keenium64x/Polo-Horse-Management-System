@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-21 08:44:55.494016",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "feeding_section",
+  "horse",
+  "food",
+  "quantity",
+  "unit"
+ ],
+ "fields": [
+  {
+   "fieldname": "feeding_section",
+   "fieldtype": "Section Break",
+   "label": "Feeding"
+  },
+  {
+   "fieldname": "horse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Horse",
+   "options": "Horse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "food",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Food",
+   "options": "Food",
+   "reqd": 1
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "non_negative": 1,
+   "oldfieldname": "qauntity",
+   "oldfieldtype": "Data",
+   "precision": "2",
+   "reqd": 1
+  },
+  {
+   "default": "kg",
+   "fieldname": "unit",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Unit",
+   "options": "kg\ng\nlitre\nml\nscoop\nbale\nportion",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-21 08:55:49.457640",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Feeding",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

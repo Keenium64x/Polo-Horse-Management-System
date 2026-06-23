@@ -1,0 +1,47 @@
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "home_page": "",
+  "is_custom": 0,
+  "name": "Groom",
+  "role_name": "Groom"
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "home_page": "",
+  "is_custom": 0,
+  "name": "Horse Manager",
+  "role_name": "Horse Manager"
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "home_page": "",
+  "is_custom": 0,
+  "name": "Horse Owner",
+  "role_name": "Horse Owner"
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "home_page": "",
+  "is_custom": 0,
+  "name": "Veterinarian",
+  "role_name": "Veterinarian"
+ },
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "doctype": "Role",
+  "home_page": "",
+  "is_custom": 0,
+  "name": "Yard Manager",
+  "role_name": "Yard Manager"
+ }
+]

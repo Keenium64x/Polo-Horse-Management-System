@@ -1,0 +1,39 @@
+{
+ "app": "horsemanagement",
+ "creation": "2026-06-23 11:21:30.357611",
+ "docstatus": 0,
+ "doctype": "Desktop Icon",
+ "hidden": 0,
+ "icon_type": "App",
+ "idx": 0,
+ "label": "HorseManagement",
+ "link_to": "Horse Management",
+ "link_type": "Workspace Sidebar",
+ "modified": "2026-06-23 11:21:48.060715",
+ "modified_by": "Administrator",
+ "name": "HorseManagement",
+ "owner": "Administrator",
+ "restrict_removal": 0,
+ "roles": [
+  {
+   "role": "Groom"
+  },
+  {
+   "role": "Horse Manager"
+  },
+  {
+   "role": "Horse Owner"
+  },
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Veterinarian"
+  },
+  {
+   "role": "Yard Manager"
+  }
+ ],
+ "sidebar": "Horse Management",
+ "standard": 1
+}
