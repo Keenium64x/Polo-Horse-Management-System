@@ -17,12 +17,32 @@ fixtures = [
 					"Horse Manager",
 					"Yard Manager",
 					"Horse Owner",
-					"Groom",
+					"Horse Groom",
 					"Veterinarian",
 				],
 			]
 		],
-	}
+	},
+	{
+		"dt": "Workflow State",
+		"filters": [
+			[
+				"workflow_state_name",
+				"in",
+				[
+					"HM Draft",
+					"HM Published",
+					"HM In Progress",
+					"HM Completed",
+					"HM Not Completed",
+					"HM Skipped",
+					"HM Submitted",
+					"HM Reviewed",
+					"HM Overdue",
+				],
+			]
+		],
+	},
 ]
 
 # Apps
@@ -140,30 +160,52 @@ fixtures = [
 # -----------
 # Permissions evaluated in scripted ways
 
-# permission_query_conditions = {
-# 	"Event": "frappe.desk.doctype.event.event.get_permission_query_conditions",
-# }
-#
-# has_permission = {
-# 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
+permission_query_conditions = {
+	"Daily Work Plan": "horsemanagement.permissions.get_permission_query_conditions",
+	"Daily Groom Task": "horsemanagement.permissions.get_permission_query_conditions",
+	"Daily Groom Report": "horsemanagement.permissions.get_permission_query_conditions",
+}
+
+has_permission = {
+	"Daily Work Plan": "horsemanagement.permissions.has_operational_permission",
+	"Daily Groom Task": "horsemanagement.permissions.has_operational_permission",
+	"Daily Groom Report": "horsemanagement.permissions.has_operational_permission",
+}
 
 # Document Events
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"Daily Work Plan": {
+		"before_save": "horsemanagement.permissions.validate_daily_work_plan",
+		"before_update_after_submit": "horsemanagement.permissions.prevent_submitted_update",
+		"before_cancel": "horsemanagement.permissions.validate_owner_cancel",
+		"on_trash": "horsemanagement.permissions.validate_operational_delete",
+	},
+	"Daily Groom Task": {
+		"before_save": "horsemanagement.permissions.validate_daily_groom_task",
+		"before_update_after_submit": "horsemanagement.permissions.prevent_submitted_update",
+		"before_cancel": "horsemanagement.permissions.validate_owner_cancel",
+		"on_trash": "horsemanagement.permissions.validate_operational_delete",
+	},
+	"Daily Groom Report": {
+		"before_save": "horsemanagement.permissions.validate_daily_groom_report",
+		"before_update_after_submit": "horsemanagement.permissions.prevent_submitted_update",
+		"before_cancel": "horsemanagement.permissions.validate_owner_cancel",
+		"on_trash": "horsemanagement.permissions.validate_operational_delete",
+	},
+}
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
+scheduler_events = {
+	"cron": {
+		"*/5 * * * *": [
+			"horsemanagement.daily_planning.process_daily_planning_schedule",
+		]
+	},
 # 	"all": [
 # 		"horsemanagement.tasks.all"
 # 	],
@@ -179,7 +221,7 @@ fixtures = [
 # 	"monthly": [
 # 		"horsemanagement.tasks.monthly"
 # 	],
-# }
+}
 
 # Testing
 # -------

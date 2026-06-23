@@ -1,0 +1,202 @@
+{
+ "actions": [],
+ "creation": "2026-06-23 14:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "generation_section",
+  "generate_plans_automatically",
+  "days_ahead_to_generate",
+  "generation_column",
+  "generation_time",
+  "default_template",
+  "default_stable",
+  "publication_section",
+  "automatic_publication_enabled",
+  "publication_cutoff_time",
+  "closing_column",
+  "end_of_day_closing_time",
+  "lifecycle_section",
+  "draft_state",
+  "published_state",
+  "in_progress_state",
+  "final_states",
+  "report_states_section",
+  "submitted_state",
+  "reviewed_state",
+  "overdue_state"
+ ],
+ "fields": [
+  {
+   "fieldname": "generation_section",
+   "fieldtype": "Section Break",
+   "label": "Daily Plan Generation"
+  },
+  {
+   "default": "0",
+   "fieldname": "generate_plans_automatically",
+   "fieldtype": "Check",
+   "label": "Generate Plans Automatically"
+  },
+  {
+   "default": "1",
+   "fieldname": "days_ahead_to_generate",
+   "fieldtype": "Int",
+   "label": "Days Ahead to Generate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "generation_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "18:00:00",
+   "fieldname": "generation_time",
+   "fieldtype": "Time",
+   "label": "Generation Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "default_template",
+   "fieldtype": "Link",
+   "label": "Default Care Template",
+   "options": "Horse Care Template"
+  },
+  {
+   "fieldname": "default_stable",
+   "fieldtype": "Link",
+   "label": "Default Stable",
+   "options": "Yard Location"
+  },
+  {
+   "fieldname": "publication_section",
+   "fieldtype": "Section Break",
+   "label": "Publication and Closing"
+  },
+  {
+   "default": "0",
+   "fieldname": "automatic_publication_enabled",
+   "fieldtype": "Check",
+   "label": "Automatic Publication Enabled"
+  },
+  {
+   "default": "20:00:00",
+   "fieldname": "publication_cutoff_time",
+   "fieldtype": "Time",
+   "label": "Publication Cutoff Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "closing_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "22:00:00",
+   "fieldname": "end_of_day_closing_time",
+   "fieldtype": "Time",
+   "label": "End-of-Day Closing Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lifecycle_section",
+   "fieldtype": "Section Break",
+   "label": "Operational Lifecycle"
+  },
+  {
+   "default": "HM Draft",
+   "fieldname": "draft_state",
+   "fieldtype": "Link",
+   "label": "Draft State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "default": "HM Published",
+   "fieldname": "published_state",
+   "fieldtype": "Link",
+   "label": "Published State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "default": "HM In Progress",
+   "fieldname": "in_progress_state",
+   "fieldtype": "Link",
+   "label": "In Progress State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "default": "HM Completed\nHM Not Completed\nHM Skipped",
+   "fieldname": "final_states",
+   "fieldtype": "Small Text",
+   "label": "Final Task States",
+   "read_only": 1
+  },
+  {
+   "fieldname": "report_states_section",
+   "fieldtype": "Section Break",
+   "label": "Report Lifecycle"
+  },
+  {
+   "default": "HM Submitted",
+   "fieldname": "submitted_state",
+   "fieldtype": "Link",
+   "label": "Submitted State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "default": "HM Reviewed",
+   "fieldname": "reviewed_state",
+   "fieldtype": "Link",
+   "label": "Reviewed State",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "default": "HM Overdue",
+   "fieldname": "overdue_state",
+   "fieldtype": "Link",
+   "label": "Overdue State",
+   "options": "Workflow State",
+   "read_only": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-06-23 14:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Horse Management Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Horse Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Yard Manager",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Horse Owner",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

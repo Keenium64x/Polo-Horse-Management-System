@@ -1,0 +1,214 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "CARE-TPL-.#####",
+ "creation": "2026-06-23 15:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_section",
+  "template_name",
+  "version_number",
+  "previous_version",
+  "template_column",
+  "is_active",
+  "active_from",
+  "active_until",
+  "target_section",
+  "target_type",
+  "horse",
+  "target_column",
+  "horse_group",
+  "stable",
+  "assignment_section",
+  "default_groom",
+  "notes",
+  "items_section",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_section",
+   "fieldtype": "Section Break",
+   "label": "Care Template"
+  },
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Template Name",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "version_number",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Version",
+   "reqd": 1
+  },
+  {
+   "fieldname": "previous_version",
+   "fieldtype": "Link",
+   "label": "Previous Version",
+   "no_copy": 1,
+   "options": "Horse Care Template"
+  },
+  {
+   "fieldname": "template_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Active"
+  },
+  {
+   "default": "Today",
+   "fieldname": "active_from",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Active From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "active_until",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Active Until"
+  },
+  {
+   "fieldname": "target_section",
+   "fieldtype": "Section Break",
+   "label": "Applies To"
+  },
+  {
+   "fieldname": "target_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Target Type",
+   "options": "Horse\nHorse Group\nStable",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.target_type == 'Horse'",
+   "fieldname": "horse",
+   "fieldtype": "Link",
+   "label": "Horse",
+   "mandatory_depends_on": "eval:doc.target_type == 'Horse'",
+   "options": "Horse"
+  },
+  {
+   "fieldname": "target_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.target_type == 'Horse Group'",
+   "fieldname": "horse_group",
+   "fieldtype": "Link",
+   "label": "Horse Group",
+   "mandatory_depends_on": "eval:doc.target_type == 'Horse Group'",
+   "options": "Horse Group"
+  },
+  {
+   "depends_on": "eval:doc.target_type == 'Stable'",
+   "fieldname": "stable",
+   "fieldtype": "Link",
+   "label": "Stable",
+   "mandatory_depends_on": "eval:doc.target_type == 'Stable'",
+   "options": "Yard Location"
+  },
+  {
+   "fieldname": "assignment_section",
+   "fieldtype": "Section Break",
+   "label": "Default Assignment"
+  },
+  {
+   "description": "Used unless an item has its own Assigned Groom.",
+   "fieldname": "default_groom",
+   "fieldtype": "Link",
+   "label": "Default Groom",
+   "options": "User"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Template Notes"
+  },
+  {
+   "fieldname": "items_section",
+   "fieldtype": "Section Break",
+   "label": "Care Tasks"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Care Template Items",
+   "options": "Horse Care Template Item",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-23 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Horse Care Template",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Horse Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Yard Manager",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Horse Owner",
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "template_name",
+ "track_changes": 1
+}

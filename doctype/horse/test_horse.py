@@ -38,7 +38,7 @@ class IntegrationTestHorse(IntegrationTestCase):
 		self.assertRaises(frappe.ValidationError, horse.insert, ignore_permissions=True)
 
 	def test_foundation_records_are_installed(self):
-		for role in ("Horse Manager", "Yard Manager", "Horse Owner", "Groom", "Veterinarian"):
+		for role in ("Horse Manager", "Yard Manager", "Horse Owner", "Horse Groom", "Veterinarian"):
 			self.assertTrue(frappe.db.exists("Role", role))
 
 		self.assertTrue(frappe.db.exists("Workspace", "Horse Management"))

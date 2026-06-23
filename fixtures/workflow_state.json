@@ -1,0 +1,56 @@
+[
+ {
+  "doctype": "Workflow State",
+  "name": "HM Completed",
+  "style": "Success",
+  "workflow_state_name": "HM Completed"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Draft",
+  "style": "Primary",
+  "workflow_state_name": "HM Draft"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM In Progress",
+  "style": "Info",
+  "workflow_state_name": "HM In Progress"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Not Completed",
+  "style": "Danger",
+  "workflow_state_name": "HM Not Completed"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Overdue",
+  "style": "Danger",
+  "workflow_state_name": "HM Overdue"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Published",
+  "style": "Success",
+  "workflow_state_name": "HM Published"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Reviewed",
+  "style": "Success",
+  "workflow_state_name": "HM Reviewed"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Skipped",
+  "style": "Warning",
+  "workflow_state_name": "HM Skipped"
+ },
+ {
+  "doctype": "Workflow State",
+  "name": "HM Submitted",
+  "style": "Primary",
+  "workflow_state_name": "HM Submitted"
+ }
+]

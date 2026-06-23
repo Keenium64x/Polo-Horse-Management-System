@@ -6,7 +6,7 @@
  "hidden": 0,
  "icon_type": "App",
  "idx": 0,
- "label": "HorseManagement",
+ "label": "Horse Management",
  "link_to": "Horse Management",
  "link_type": "Workspace Sidebar",
  "modified": "2026-06-23 11:21:48.060715",
@@ -16,7 +16,7 @@
  "restrict_removal": 0,
  "roles": [
   {
-   "role": "Groom"
+   "role": "Horse Groom"
   },
   {
    "role": "Horse Manager"

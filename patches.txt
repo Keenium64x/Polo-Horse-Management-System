@@ -2,6 +2,9 @@
 # Patches added in this section will be executed before doctypes are migrated
 # Read docs to understand patches: https://docs.frappe.io/framework/user/en/database-migrations
 horsemanagement.patches.v0_0.normalize_legacy_measurements
+horsemanagement.patches.v0_0.rename_groom_role
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+horsemanagement.patches.v0_0.update_navigation_entries
+horsemanagement.patches.v0_0.normalize_daily_groom_task_statuses

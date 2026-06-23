@@ -1,0 +1,385 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "GROOM-TASK-.YYYY.-.#####",
+ "creation": "2026-06-23 16:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "task_section",
+  "daily_work_plan",
+  "plan_date",
+  "stable",
+  "task_column",
+  "horse",
+  "assigned_groom",
+  "status",
+  "todo",
+  "schedule_section",
+  "task_title",
+  "task_type",
+  "priority",
+  "schedule_column",
+  "planned_start",
+  "planned_end",
+  "duration",
+  "instructions_section",
+  "instructions",
+  "completion_section",
+  "started_at",
+  "completed_at",
+  "completion_notes",
+  "exception_reason",
+  "completion_photographs",
+  "completion_column",
+  "equipment_used",
+  "horse_observation_created",
+  "equipment_issue_created",
+  "requirements_section",
+  "is_mandatory",
+  "photograph_required",
+  "requirements_column",
+  "notes_required_on_exception",
+  "required_equipment",
+  "source_section",
+  "original_template",
+  "original_template_item",
+  "template_version",
+  "source_target_type",
+  "source_target",
+  "generation_key"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_section",
+   "fieldtype": "Section Break",
+   "label": "Daily Groom Task"
+  },
+  {
+   "fieldname": "daily_work_plan",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Daily Work Plan",
+   "options": "Daily Work Plan",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "plan_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Plan Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stable",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Stable",
+   "options": "Yard Location",
+   "read_only": 1
+  },
+  {
+   "fieldname": "task_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "horse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Horse",
+   "options": "Horse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "assigned_groom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Assigned Groom",
+   "options": "User"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Pending\nIn Progress\nCompleted\nNot Completed\nSkipped",
+   "reqd": 1
+  },
+  {
+   "fieldname": "todo",
+   "fieldtype": "Link",
+   "label": "Linked ToDo",
+   "options": "ToDo",
+   "read_only": 1
+  },
+  {
+   "fieldname": "schedule_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule"
+  },
+  {
+   "fieldname": "task_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task_type",
+   "fieldtype": "Select",
+   "label": "Task Type",
+   "options": "Feeding\nWater Check\nTurnout\nBring In\nGrooming\nStable Cleaning\nBlanketing\nLeg Care\nWound Care\nMedication\nExercise\nHealth Check\nEquipment Check\nOther",
+   "reqd": 1
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "schedule_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_start",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Planned Start",
+   "reqd": 1
+  },
+  {
+   "fieldname": "planned_end",
+   "fieldtype": "Datetime",
+   "label": "Planned End",
+   "reqd": 1
+  },
+  {
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "label": "Duration",
+   "reqd": 1
+  },
+  {
+   "fieldname": "instructions_section",
+   "fieldtype": "Section Break",
+   "label": "Instructions"
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Small Text",
+   "label": "Instructions",
+   "reqd": 1
+  },
+  {
+   "fieldname": "completion_section",
+   "fieldtype": "Section Break",
+   "label": "Completion"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Started At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completed_at",
+   "fieldtype": "Datetime",
+   "label": "Completed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "completion_notes",
+   "fieldtype": "Small Text",
+   "label": "Completion Notes"
+  },
+  {
+   "depends_on": "eval:['Not Completed', 'Skipped'].includes(doc.status)",
+   "fieldname": "exception_reason",
+   "fieldtype": "Small Text",
+   "label": "Exception Reason"
+  },
+  {
+   "fieldname": "completion_photographs",
+   "fieldtype": "Table",
+   "label": "Photographs",
+   "options": "Daily Groom Task Photograph"
+  },
+  {
+   "fieldname": "completion_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "equipment_used",
+   "fieldtype": "Small Text",
+   "label": "Equipment Used"
+  },
+  {
+   "default": "0",
+   "fieldname": "horse_observation_created",
+   "fieldtype": "Check",
+   "label": "Horse Observation Created"
+  },
+  {
+   "default": "0",
+   "fieldname": "equipment_issue_created",
+   "fieldtype": "Check",
+   "label": "Equipment Issue Created"
+  },
+  {
+   "fieldname": "requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Completion Requirements"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "label": "Mandatory"
+  },
+  {
+   "default": "0",
+   "fieldname": "photograph_required",
+   "fieldtype": "Check",
+   "label": "Photograph Required"
+  },
+  {
+   "fieldname": "requirements_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "notes_required_on_exception",
+   "fieldtype": "Check",
+   "label": "Notes Required on Exception"
+  },
+  {
+   "fieldname": "required_equipment",
+   "fieldtype": "Small Text",
+   "label": "Required Equipment"
+  },
+  {
+   "fieldname": "source_section",
+   "fieldtype": "Section Break",
+   "label": "Template Snapshot"
+  },
+  {
+   "fieldname": "original_template",
+   "fieldtype": "Link",
+   "label": "Original Template",
+   "options": "Horse Care Template",
+   "read_only": 1
+  },
+  {
+   "description": "Original child-row identifier retained for audit purposes.",
+   "fieldname": "original_template_item",
+   "fieldtype": "Data",
+   "label": "Original Template Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "template_version",
+   "fieldtype": "Int",
+   "label": "Template Version",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_target_type",
+   "fieldtype": "Data",
+   "label": "Source Target Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source_target",
+   "fieldtype": "Data",
+   "label": "Source Target",
+   "read_only": 1
+  },
+  {
+   "fieldname": "generation_key",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Generation Key",
+   "read_only": 1,
+   "unique": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-06-23 16:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Daily Groom Task",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Horse Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Yard Manager",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Horse Owner",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "print": 1,
+   "read": 1,
+   "role": "Horse Groom",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "planned_start",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "task_title",
+ "track_changes": 1
+}

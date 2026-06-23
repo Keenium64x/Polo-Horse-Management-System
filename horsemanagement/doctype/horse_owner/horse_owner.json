@@ -104,11 +104,6 @@
   {
    "print": 1,
    "read": 1,
-   "role": "Groom"
-  },
-  {
-   "print": 1,
-   "read": 1,
    "role": "Veterinarian"
   },
   {

@@ -196,6 +196,7 @@
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "Passport Number",
+   "permlevel": 1,
    "unique": 1
   },
   {
@@ -203,6 +204,7 @@
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "Microchip Number",
+   "permlevel": 1,
    "unique": 1
   },
   {
@@ -214,52 +216,61 @@
    "fieldtype": "Data",
    "in_standard_filter": 1,
    "label": "Registration Number",
+   "permlevel": 1,
    "unique": 1
   },
   {
    "fieldname": "registration_authority",
    "fieldtype": "Data",
-   "label": "Registration Authority"
+   "label": "Registration Authority",
+   "permlevel": 1
   },
   {
    "fieldname": "ownership_tab",
    "fieldtype": "Tab Break",
-   "label": "Ownership"
+   "label": "Ownership",
+   "permlevel": 2
   },
   {
    "fieldname": "ownership_section",
    "fieldtype": "Section Break",
-   "label": "Current Ownership"
+   "label": "Current Ownership",
+   "permlevel": 2
   },
   {
    "fieldname": "primary_owner",
    "fieldtype": "Link",
    "in_standard_filter": 1,
    "label": "Primary Owner",
-   "options": "Horse Owner"
+   "options": "Horse Owner",
+   "permlevel": 2
   },
   {
    "default": "100",
    "depends_on": "primary_owner",
    "fieldname": "primary_ownership_percentage",
    "fieldtype": "Percent",
-   "label": "Primary Ownership"
+   "label": "Primary Ownership",
+   "permlevel": 2
   },
   {
    "fieldname": "ownership_column",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "permlevel": 2
   },
   {
    "fieldname": "total_ownership_percentage",
    "fieldtype": "Percent",
    "label": "Total Ownership Recorded",
+   "permlevel": 2,
    "read_only": 1
   },
   {
    "fieldname": "shared_owners",
    "fieldtype": "Table",
    "label": "Shared Owners",
-   "options": "Horse Ownership"
+   "options": "Horse Ownership",
+   "permlevel": 2
   },
   {
    "fieldname": "location_tab",
@@ -486,20 +497,22 @@
    "write": 1
   },
   {
+   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Horse Owner",
-   "share": 1
+   "share": 1,
+   "write": 1
   },
   {
    "email": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Groom"
+   "role": "Horse Groom"
   },
   {
    "email": 1,
@@ -520,6 +533,59 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Horse Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Yard Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Horse Owner",
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "Veterinarian"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 2,
+   "read": 1,
+   "role": "Horse Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 2,
+   "read": 1,
+   "role": "Yard Manager",
+   "write": 1
+  },
+  {
+   "permlevel": 2,
+   "read": 1,
+   "role": "Horse Owner",
+   "write": 1
+  },
+  {
+   "permlevel": 2,
+   "read": 1,
+   "role": "System Manager",
    "write": 1
   }
  ],

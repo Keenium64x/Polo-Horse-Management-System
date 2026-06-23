@@ -1,0 +1,181 @@
+{
+ "actions": [],
+ "creation": "2026-06-23 15:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "task_title",
+  "task_type",
+  "start_time",
+  "duration",
+  "assigned_groom",
+  "priority",
+  "instructions",
+  "requirements_section",
+  "is_mandatory",
+  "photograph_required",
+  "notes_required_on_exception",
+  "required_equipment",
+  "weekdays_section",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "weekday_column",
+  "friday",
+  "saturday",
+  "sunday"
+ ],
+ "fields": [
+  {
+   "fieldname": "task_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Task",
+   "reqd": 1
+  },
+  {
+   "fieldname": "task_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Task Type",
+   "options": "Feeding\nWater Check\nTurnout\nBring In\nGrooming\nStable Cleaning\nBlanketing\nLeg Care\nWound Care\nMedication\nExercise\nHealth Check\nEquipment Check\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "description": "Planned duration in hours, minutes and seconds.",
+   "fieldname": "duration",
+   "fieldtype": "Duration",
+   "in_list_view": 1,
+   "label": "Duration",
+   "reqd": 1
+  },
+  {
+   "description": "Overrides the template's Default Groom for this task.",
+   "fieldname": "assigned_groom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned Groom",
+   "options": "User"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh\nUrgent",
+   "reqd": 1
+  },
+  {
+   "fieldname": "instructions",
+   "fieldtype": "Small Text",
+   "label": "Instructions",
+   "reqd": 1
+  },
+  {
+   "fieldname": "requirements_section",
+   "fieldtype": "Section Break",
+   "label": "Completion Requirements"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_mandatory",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Mandatory"
+  },
+  {
+   "default": "0",
+   "fieldname": "photograph_required",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Photograph Required"
+  },
+  {
+   "default": "1",
+   "fieldname": "notes_required_on_exception",
+   "fieldtype": "Check",
+   "label": "Notes Required on Exception"
+  },
+  {
+   "fieldname": "required_equipment",
+   "fieldtype": "Small Text",
+   "label": "Required Equipment"
+  },
+  {
+   "fieldname": "weekdays_section",
+   "fieldtype": "Section Break",
+   "label": "Applicable Weekdays"
+  },
+  {
+   "default": "1",
+   "fieldname": "monday",
+   "fieldtype": "Check",
+   "label": "Monday"
+  },
+  {
+   "default": "1",
+   "fieldname": "tuesday",
+   "fieldtype": "Check",
+   "label": "Tuesday"
+  },
+  {
+   "default": "1",
+   "fieldname": "wednesday",
+   "fieldtype": "Check",
+   "label": "Wednesday"
+  },
+  {
+   "default": "1",
+   "fieldname": "thursday",
+   "fieldtype": "Check",
+   "label": "Thursday"
+  },
+  {
+   "fieldname": "weekday_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "friday",
+   "fieldtype": "Check",
+   "label": "Friday"
+  },
+  {
+   "default": "1",
+   "fieldname": "saturday",
+   "fieldtype": "Check",
+   "label": "Saturday"
+  },
+  {
+   "default": "1",
+   "fieldname": "sunday",
+   "fieldtype": "Check",
+   "label": "Sunday"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-06-23 15:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HorseManagement",
+ "name": "Horse Care Template Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
