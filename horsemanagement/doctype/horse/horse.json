@@ -6,33 +6,162 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "horse_section",
+  "identity_tab",
+  "identity_section",
+  "horse_image",
   "horse_name",
+  "registered_name",
   "description",
+  "identity_column",
+  "birth_date",
+  "age",
+  "sex",
+  "breed",
+  "colour",
+  "physical_section",
+  "height",
+  "height_unit",
   "weight",
-  "vaccinated"
+  "photos_section",
+  "photos",
+  "registration_tab",
+  "registration_section",
+  "passport_number",
+  "microchip_number",
+  "registration_column",
+  "registration_number",
+  "registration_authority",
+  "ownership_tab",
+  "ownership_section",
+  "primary_owner",
+  "primary_ownership_percentage",
+  "ownership_column",
+  "total_ownership_percentage",
+  "shared_owners",
+  "location_tab",
+  "location_section",
+  "current_stable",
+  "current_paddock",
+  "location_column",
+  "current_location",
+  "location_notes",
+  "handling_tab",
+  "temperament_section",
+  "temperament",
+  "temperament_notes",
+  "warning_section",
+  "has_handling_warning",
+  "handling_warnings",
+  "playing_tab",
+  "playing_section",
+  "speed",
+  "acceleration",
+  "turning",
+  "playing_column",
+  "stopping",
+  "stamina",
+  "rideability",
+  "preference_section",
+  "preferred_position",
+  "preferred_player_type",
+  "status_tab",
+  "status_section",
+  "availability_status",
+  "status_since",
+  "status_notes"
  ],
  "fields": [
   {
-   "fieldname": "horse_section",
+   "fieldname": "identity_tab",
+   "fieldtype": "Tab Break",
+   "label": "Profile"
+  },
+  {
+   "fieldname": "identity_section",
    "fieldtype": "Section Break",
-   "label": "Horse"
+   "label": "Identity"
+  },
+  {
+   "fieldname": "horse_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
   },
   {
    "fieldname": "horse_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Name",
+   "label": "Stable Name",
    "oldfieldname": "name1",
    "oldfieldtype": "Data",
    "reqd": 1,
    "unique": 1
   },
   {
+   "fieldname": "registered_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Registered Name"
+  },
+  {
    "fieldname": "description",
    "fieldtype": "Small Text",
    "label": "Description"
+  },
+  {
+   "fieldname": "identity_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "birth_date",
+   "fieldtype": "Date",
+   "in_standard_filter": 1,
+   "label": "Birth Date"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sex",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Sex",
+   "options": "\nMare\nGelding\nStallion\nUnknown"
+  },
+  {
+   "fieldname": "breed",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Breed"
+  },
+  {
+   "fieldname": "colour",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Colour"
+  },
+  {
+   "fieldname": "physical_section",
+   "fieldtype": "Section Break",
+   "label": "Physical Details"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height",
+   "non_negative": 1,
+   "precision": "2"
+  },
+  {
+   "default": "hh",
+   "fieldname": "height_unit",
+   "fieldtype": "Select",
+   "label": "Height Unit",
+   "options": "hh\ncm",
+   "reqd": 1
   },
   {
    "fieldname": "weight",
@@ -42,16 +171,290 @@
    "precision": "2"
   },
   {
+   "fieldname": "photos_section",
+   "fieldtype": "Section Break",
+   "label": "Photos"
+  },
+  {
+   "fieldname": "photos",
+   "fieldtype": "Table",
+   "label": "Additional Photos",
+   "options": "Horse Photo"
+  },
+  {
+   "fieldname": "registration_tab",
+   "fieldtype": "Tab Break",
+   "label": "Registration"
+  },
+  {
+   "fieldname": "registration_section",
+   "fieldtype": "Section Break",
+   "label": "Identification Numbers"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Passport Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "microchip_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Microchip Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "registration_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Registration Number",
+   "unique": 1
+  },
+  {
+   "fieldname": "registration_authority",
+   "fieldtype": "Data",
+   "label": "Registration Authority"
+  },
+  {
+   "fieldname": "ownership_tab",
+   "fieldtype": "Tab Break",
+   "label": "Ownership"
+  },
+  {
+   "fieldname": "ownership_section",
+   "fieldtype": "Section Break",
+   "label": "Current Ownership"
+  },
+  {
+   "fieldname": "primary_owner",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Primary Owner",
+   "options": "Horse Owner"
+  },
+  {
+   "default": "100",
+   "depends_on": "primary_owner",
+   "fieldname": "primary_ownership_percentage",
+   "fieldtype": "Percent",
+   "label": "Primary Ownership"
+  },
+  {
+   "fieldname": "ownership_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_ownership_percentage",
+   "fieldtype": "Percent",
+   "label": "Total Ownership Recorded",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shared_owners",
+   "fieldtype": "Table",
+   "label": "Shared Owners",
+   "options": "Horse Ownership"
+  },
+  {
+   "fieldname": "location_tab",
+   "fieldtype": "Tab Break",
+   "label": "Location"
+  },
+  {
+   "fieldname": "location_section",
+   "fieldtype": "Section Break",
+   "label": "Current Location"
+  },
+  {
+   "fieldname": "current_stable",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Assigned Stable",
+   "options": "Yard Location"
+  },
+  {
+   "fieldname": "current_paddock",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Assigned Paddock",
+   "options": "Yard Location"
+  },
+  {
+   "fieldname": "location_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "current_location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Current Location",
+   "options": "Yard Location"
+  },
+  {
+   "fieldname": "location_notes",
+   "fieldtype": "Small Text",
+   "label": "Location Notes"
+  },
+  {
+   "fieldname": "handling_tab",
+   "fieldtype": "Tab Break",
+   "label": "Handling"
+  },
+  {
+   "fieldname": "temperament_section",
+   "fieldtype": "Section Break",
+   "label": "Temperament"
+  },
+  {
+   "fieldname": "temperament",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Temperament",
+   "options": "\nCalm\nSensitive\nForward\nHot\nDifficult\nVariable"
+  },
+  {
+   "fieldname": "temperament_notes",
+   "fieldtype": "Small Text",
+   "label": "Temperament Notes"
+  },
+  {
+   "fieldname": "warning_section",
+   "fieldtype": "Section Break",
+   "label": "Handling Warnings"
+  },
+  {
    "default": "0",
-   "fieldname": "vaccinated",
+   "fieldname": "has_handling_warning",
    "fieldtype": "Check",
-   "label": "Vaccinated"
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Handling Warning"
+  },
+  {
+   "depends_on": "has_handling_warning",
+   "fieldname": "handling_warnings",
+   "fieldtype": "Small Text",
+   "label": "Warning Details",
+   "mandatory_depends_on": "has_handling_warning"
+  },
+  {
+   "fieldname": "playing_tab",
+   "fieldtype": "Tab Break",
+   "label": "Playing"
+  },
+  {
+   "description": "Rate each characteristic from 1 to 10. Leave zero for not yet assessed.",
+   "fieldname": "playing_section",
+   "fieldtype": "Section Break",
+   "label": "Playing Characteristics"
+  },
+  {
+   "default": "0",
+   "fieldname": "speed",
+   "fieldtype": "Int",
+   "label": "Speed",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "acceleration",
+   "fieldtype": "Int",
+   "label": "Acceleration",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "turning",
+   "fieldtype": "Int",
+   "label": "Turning",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "playing_column",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "stopping",
+   "fieldtype": "Int",
+   "label": "Stopping",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "stamina",
+   "fieldtype": "Int",
+   "label": "Stamina",
+   "non_negative": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "rideability",
+   "fieldtype": "Int",
+   "label": "Rideability",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "preference_section",
+   "fieldtype": "Section Break",
+   "label": "Player Preference"
+  },
+  {
+   "fieldname": "preferred_position",
+   "fieldtype": "Data",
+   "label": "Preferred Position"
+  },
+  {
+   "fieldname": "preferred_player_type",
+   "fieldtype": "Select",
+   "label": "Preferred Player Type",
+   "options": "\nAny\nBeginner\nIntermediate\nAdvanced\nProfessional"
+  },
+  {
+   "fieldname": "status_tab",
+   "fieldtype": "Tab Break",
+   "label": "Status"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Availability"
+  },
+  {
+   "default": "Available",
+   "fieldname": "availability_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Availability Status",
+   "options": "Available\nResting\nLight Work\nInjured\nVeterinary Hold\nRetired\nSold",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "status_since",
+   "fieldtype": "Date",
+   "label": "Status Since",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status_notes",
+   "fieldtype": "Small Text",
+   "label": "Status Notes"
   }
  ],
  "grid_page_length": 50,
+ "image_field": "horse_image",
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-21 08:49:46.367792",
+ "modified": "2026-06-23 13:00:00.000000",
  "modified_by": "Administrator",
  "module": "HorseManagement",
  "name": "Horse",
@@ -122,8 +525,9 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
- "sort_field": "creation",
- "sort_order": "DESC",
+ "show_preview_popup": 1,
+ "sort_field": "horse_name",
+ "sort_order": "ASC",
  "states": [],
  "title_field": "horse_name",
  "track_changes": 1

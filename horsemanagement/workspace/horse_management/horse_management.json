@@ -1,7 +1,7 @@
 {
  "app": "horsemanagement",
  "charts": [],
- "content": "[{\"id\":\"horse-management-heading\",\"type\":\"header\",\"data\":{\"text\":\"Horse Management\",\"col\":12}},{\"id\":\"horse-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Horses\",\"col\":4}},{\"id\":\"feeding-session-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Feeding Sessions\",\"col\":4}},{\"id\":\"food-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Foods\",\"col\":4}},{\"id\":\"masters-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"operations-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":6}},{\"id\":\"masters-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":6}}]",
+ "content": "[{\"id\":\"horse-management-heading\",\"type\":\"header\",\"data\":{\"text\":\"Horse Management\",\"col\":12}},{\"id\":\"horse-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Horses\",\"col\":3}},{\"id\":\"owner-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Horse Owners\",\"col\":3}},{\"id\":\"location-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Yard Locations\",\"col\":3}},{\"id\":\"feeding-session-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Feeding Sessions\",\"col\":3}},{\"id\":\"masters-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"operations-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Operations\",\"col\":6}},{\"id\":\"masters-card\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":6}}]",
  "creation": "2026-06-23 12:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -36,7 +36,7 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Masters",
-   "link_count": 2,
+   "link_count": 4,
    "onboard": 0,
    "type": "Card Break"
   },
@@ -47,6 +47,28 @@
    "label": "Horses",
    "link_count": 0,
    "link_to": "Horse",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Horse Owners",
+   "link_count": 0,
+   "link_to": "Horse Owner",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Yard Locations",
+   "link_count": 0,
+   "link_to": "Yard Location",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -100,6 +122,22 @@
    "doc_view": "List",
    "label": "Horses",
    "link_to": "Horse",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "label": "Horse Owners",
+   "link_to": "Horse Owner",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "label": "Yard Locations",
+   "link_to": "Yard Location",
    "stats_filter": "[]",
    "type": "DocType"
   },
